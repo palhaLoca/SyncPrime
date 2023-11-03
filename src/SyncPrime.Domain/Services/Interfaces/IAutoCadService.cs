@@ -1,10 +1,10 @@
-﻿using Autodesk.AutoCAD.DatabaseServices;
+﻿using SyncPrime.Domain.Enums;
 using System.Collections.Generic;
 
 namespace SyncPrime.Domain.CadSevices
 {
     public interface IAutoCadService
     {
-        List<Line> GetCurrentLines();
+        List<object> GetCurrentElement(CadEmun.TypedValue typedValue);
     }
 }

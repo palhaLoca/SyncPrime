@@ -1,14 +1,16 @@
-﻿using Autodesk.AutoCAD.GraphicsInterface;
+﻿using Autodesk.AutoCAD.DatabaseServices;
 using AutoMapper;
 using SyncPrime.Application.AutoMapper;
 using SyncPrime.Application.Services.Interfaces;
 using SyncPrime.Application.ViewModel;
 using SyncPrime.Domain;
 using SyncPrime.Domain.CadSevices;
+using SyncPrime.Domain.Enums;
 using SyncPrime.Domain.Models;
 using SyncPrime.Infrastructure.CrossCutting.UnitOfWork;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SyncPrime.Application
@@ -31,7 +33,7 @@ namespace SyncPrime.Application
         {
             try
             {
-                _uow.BeginTransaction();              
+                _uow.BeginTransaction();
                 _domainService.Insert(_mapper.Map<LineModel>(line));
                 _uow.Commit();
             }
@@ -40,10 +42,15 @@ namespace SyncPrime.Application
                 MessageBox.Show(ex.Message);
                 _uow.Rollback();
             }
-        } 
-        public IEnumerable<LineViewModel> GetCurrentLines() 
-            => _mapper.Map<List<LineViewModel>>(_autoCadService.GetCurrentLines());
-
+        }
+        public IEnumerable<LineViewModel> GetCurrentLines()
+            => _mapper.Map<List<LineViewModel>>(_autoCadService.GetCurrentElement(CadEmun.TypedValue.LINE).Cast<Line>());
+        public IEnumerable<MText> GetCurrentMText()
+            => _autoCadService.GetCurrentElement(CadEmun.TypedValue.MTEXT).Cast<MText>();
+        public IEnumerable<Polyline> GetCurrentLWPolyLine()
+            => _autoCadService.GetCurrentElement(CadEmun.TypedValue.LWPOLYLINE).Cast<Polyline>();
+        public IEnumerable<BlockReference> GetCurrentInsert()
+            => _autoCadService.GetCurrentElement(CadEmun.TypedValue.INSERT).Cast<BlockReference>();
         public IEnumerable<LineViewModel> GetLines()
            => _mapper.Map<List<LineViewModel>>(_domainService.GetLines());
 

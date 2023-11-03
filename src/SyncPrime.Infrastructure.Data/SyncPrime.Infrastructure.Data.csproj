@@ -37,6 +37,9 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Dapper.2.1.15\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper.FluentMap, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.FluentMap.2.0.0\lib\netstandard2.0\Dapper.FluentMap.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -100,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBFactory\DbSession.cs" />
+    <Compile Include="FluentMap\Mappings\LineModelMap.cs" />
+    <Compile Include="FluentMap\Mappings\MyModelMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Settings1.Designer.cs">
@@ -109,12 +114,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SyncPrime.Domain\SyncPrime.Domain.csproj">
-      <Project>{1066b337-ba2c-4885-b2ab-fed3fd7de860}</Project>
-      <Name>SyncPrime.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Settings1.settings">
@@ -122,6 +121,11 @@
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SyncPrime.Domain\SyncPrime.Domain.csproj">
+      <Project>{1066B337-BA2C-4885-B2AB-FED3FD7DE860}</Project>
+      <Name>SyncPrime.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,5 @@
 ﻿using Dapper.FluentMap;
-using SyncPrime.Infrastructure.CrossCutting.FluentMap.Mappings;
+using SyncPrime.Infrastructure.Data.FluentMap.Mappings;
 
 namespace SyncPrime.Infrastructure.CrossCutting.FluentMap
 {

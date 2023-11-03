@@ -9,8 +9,7 @@ namespace SyncPrime.Application.AutoMapper
     {
         public ModelToViewModelProfile()
         {
-            CreateMap<LineModel, LineViewModel>()
-                .ForMember(dest => dest.id, opt => opt.MapFrom(src => src.id))
+            CreateMap<LineModel, LineViewModel>()                
                 .ForMember(dest => dest.layer, opt => opt.MapFrom(src => src.layer))
                 .ForMember(dest => dest.startPtX, opt => opt.MapFrom(src => src.startPtX))
                 .ForMember(dest => dest.startPtY, opt => opt.MapFrom(src => src.startPtY))

@@ -17,7 +17,7 @@ namespace SyncPrime
 
         [CommandMethod("SyncPrimeRun")]
         public void SyncPrimeRun()
-        {
+        {           
             new Home().ShowDialog();
         }
 

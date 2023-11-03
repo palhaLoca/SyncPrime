@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AutoMapper.Configuration.Annotations;
+using Newtonsoft.Json;
+using System;
 
 namespace SyncPrime.Application.ViewModel
 {
-    public  class LineViewModel
-    {
-        public long id { get; set; }       
+    public class LineViewModel
+    {               
         public string layer { get; set; }
         public double startPtX { get; set; }
         public double startPtY { get; set; }

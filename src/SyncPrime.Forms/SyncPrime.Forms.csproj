@@ -158,6 +158,10 @@
       <Project>{CF1F2405-EBB1-45E2-8E85-0C6FE4DD6643}</Project>
       <Name>SyncPrime.Infrastructure.CrossCutting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SyncPrime.Infrastructure.Data\SyncPrime.Infrastructure.Data.csproj">
+      <Project>{090DF844-6E5B-49BE-9B11-27781CEC7065}</Project>
+      <Name>SyncPrime.Infrastructure.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SyncPrime.Infrastructure.IOC\SyncPrime.Infrastructure.IOC.csproj">
       <Project>{408D4687-424C-4D4D-B0B0-DAFAB4E23EE0}</Project>
       <Name>SyncPrime.Infrastructure.IOC</Name>

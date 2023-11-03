@@ -50,12 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FluentMap\FluentMapperConfig.cs" />
-    <Compile Include="FluentMap\Mappings\LineModelMap.cs" />
-    <Compile Include="FluentMap\Mappings\MyModelMap.cs" />
+    <Compile Include="FluentMapper\FluentMapperConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SyncPrime.Domain\SyncPrime.Domain.csproj">
@@ -63,13 +65,9 @@
       <Name>SyncPrime.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\SyncPrime.Infrastructure.Data\SyncPrime.Infrastructure.Data.csproj">
-      <Project>{090DF844-6E5B-49BE-9B11-27781CEC7065}</Project>
+      <Project>{090df844-6e5b-49be-9b11-27781cec7065}</Project>
       <Name>SyncPrime.Infrastructure.Data</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

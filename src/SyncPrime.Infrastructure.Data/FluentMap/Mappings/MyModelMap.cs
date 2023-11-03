@@ -1,12 +1,7 @@
 ﻿using Dapper.FluentMap.Mapping;
 using SyncPrime.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SyncPrime.Infrastructure.CrossCutting.FluentMap.Mappings
+namespace SyncPrime.Infrastructure.Data.FluentMap.Mappings
 {
     public class MyModelMap : EntityMap<MyModel>
     {
